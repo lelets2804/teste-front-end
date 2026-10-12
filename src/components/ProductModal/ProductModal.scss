@@ -1,0 +1,120 @@
+$dark: #271c47;
+$yellow: #f7ca11;
+$purple: #3019b2;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+
+  &__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 770px;
+    min-height: 300px;
+    padding: 40px 64px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    line-height: 1;
+    color: #333;
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  &__price {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  &__description {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  &__details {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    color: $purple;
+    text-decoration: none;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    button {
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  &__buy {
+    width: 190px;
+    height: 34px;
+    border: none;
+    border-radius: 4px;
+    background: $yellow;
+    color: $dark;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,112 @@
+$dark: #271c47;
+$yellow: #f7ca11;
+
+.footer {
+  width: 100%;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 282px;
+    padding: 0 max(80px, calc((100% - 1440px) / 2 + 80px));
+    background: #f3f3f3;
+  }
+
+  &__brand {
+    width: 445px;
+    height: 198px;
+    padding-right: 40px;
+    border-right: 2px solid #dcdcdc;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+  }
+
+  &__logo-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $yellow;
+    color: #fff;
+    font-size: 32px;
+  }
+
+  &__logo-text {
+    margin-left: 1px;
+    font-size: 32px;
+    color: $dark;
+  }
+
+  &__description {
+    max-width: 280px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    color: #3f3f40;
+  }
+
+  &__social {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+
+    a {
+      display: flex;
+      color: #3f3f40;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    gap: 100px;
+    margin-left: 90px;
+  }
+
+  &__column-title {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4e4e4e;
+  }
+
+  &__column ul {
+    list-style: none;
+  }
+
+  &__column li {
+    margin-bottom: 14px;
+  }
+
+  &__column a {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #4e4e4e;
+    text-decoration: none;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    background: #fff;
+
+    p {
+      font-size: 12px;
+      font-weight: 300;
+      color: #3f3f40;
+    }
+  }
+}

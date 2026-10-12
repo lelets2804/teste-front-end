@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Product } from '../../types/Product';
+import './ProductModal.scss';
 
 interface ProductModalProps {
   product: Product;
@@ -23,27 +24,10 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
 
   return (
     <div className="modal" onClick={onClose}>
-      <div
-        className="modal__box"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button
-          type="button"
-          className="modal__close"
-          aria-label="Fechar"
-          onClick={onClose}
-        >
-          ×
-        </button>
+      <div className="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={(event) => event.stopPropagation()} >
+        <button type="button" className="modal__close" aria-label="Fechar" onClick={onClose}> × </button>
 
-        <img
-          className="modal__image"
-          src={product.photo}
-          alt={product.productName}
-        />
+        <img className="modal__image" src={product.photo} alt={product.productName} />
 
         <div className="modal__info">
           <h2 id="modal-title" className="modal__title">
@@ -57,25 +41,11 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
 
           <div className="modal__actions">
             <div className="modal__quantity">
-              <button
-                type="button"
-                aria-label="Diminuir quantidade"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              >
-                −
-              </button>
+              <button type="button" aria-label="Diminuir quantidade" onClick={() => setQuantity((q) => Math.max(1, q - 1))}  > − </button>
               <span>{String(quantity).padStart(2, '0')}</span>
-              <button
-                type="button"
-                aria-label="Aumentar quantidade"
-                onClick={() => setQuantity((q) => q + 1)}
-              >
-                +
-              </button>
+              <button type="button" aria-label="Aumentar quantidade" onClick={() => setQuantity((q) => q + 1)} > + </button>
             </div>
-            <button type="button" className="modal__buy">
-              COMPRAR
-            </button>
+            <button type="button" className="modal__buy">COMPRAR</button>
           </div>
         </div>
       </div>

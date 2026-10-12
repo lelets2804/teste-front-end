@@ -76,9 +76,7 @@ export function Header() {
           </li>
           <li>
             <a href="#" className="header__menu-subscription">
-              <img src={crownIcon} alt="" />
-              ASSINATURA
-            </a>
+              <img src={crownIcon} alt="" /> ASSINATURA </a>
           </li>
         </ul>
       </nav>

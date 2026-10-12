@@ -23,12 +23,7 @@ export function Categories() {
       <ul className="categories__list">
         {categories.map((category) => (
           <li key={category.name}>
-            <button
-              type="button"
-              className={`categories__item ${
-                category.active ? 'categories__item--active' : ''
-              }`}
-            >
+            <button type="button" className={`categories__item ${ category.active ? 'categories__item--active' : '' }`} >
               <span className="categories__card">
                 <img src={category.icon} alt="" />
               </span>

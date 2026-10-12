@@ -1,0 +1,32 @@
+import './Newsletter.scss';
+
+export function Newsletter() {
+  return (
+    <section className="newsletter" aria-labelledby="newsletter-title">
+      <div className="newsletter__inner">
+        <div className="newsletter__text">
+          <h2 id="newsletter-title" className="newsletter__title">
+            Inscreva-se na nossa newsletter
+          </h2>
+          <p className="newsletter__description">
+            Assine a nossa newsletter e receba as novidades e conteúdos
+            exclusivos da Econverse.
+          </p>
+        </div>
+
+        <form className="newsletter__form">
+          <div className="newsletter__fields">
+            <input type="text" name="name" placeholder="Digite seu nome" aria-label="Nome" />
+            <input type="email" name="email" placeholder="Digite seu e-mail" aria-label="E-mail" />
+            <button type="submit">INSCREVER</button>
+          </div>
+
+          <label className="newsletter__terms">
+            <input type="checkbox" name="terms" />
+            Aceito os termos e condições
+          </label>
+        </form>
+      </div>
+    </section>
+  );
+}

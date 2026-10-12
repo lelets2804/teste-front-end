@@ -1,75 +1,94 @@
-# React + TypeScript + Vite
+# Teste Front-End Jr - Econverse
+Página de e-commerce desenvolvida a partir do layout do Figma, com React e TypeScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tecnologias
+- React 19 + TypeScript
+- Vite
+- Sass (SCSS)
+- HTML semântico e meta tags de SEO
+- Sem bibliotecas de UI
 
-Currently, two official plugins are available:
+## Funcionalidades
+- Vitrine de produtos em carrossel, consumindo o JSON do teste
+- Modal com as informações do produto clicado (foto, nome, preço e descrição)
+- Seletor de quantidade no modal
+- O modal fecha pelo botão de fechar, clicando fora da caixa ou com a tecla Esc
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Pré-requisitos
+- Node.js 20 ou superior
+- npm
 
-## React Compiler
+## Como rodar o projeto
+1. Clone o repositório:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/lelets2804/teste-front-end.git
+cd teste-front-end
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+3. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Abra no navegador o endereço que aparecer no terminal (normalmente `http://localhost:5173`).
+
+## Como compilar
+
+```bash
+npm run build
+```
+
+Os arquivos de produção são gerados na pasta `dist`. Para visualizar o resultado da compilação:
+
+```bash
+npm run preview
+```
+
+## Como testar
+O projeto não possui testes automatizados. A verificação é feita pelos comandos abaixo:
+
+```bash
+npm run lint
+npx tsc --noEmit -p tsconfig.app.json
+```
+
+O primeiro confere o padrão do código e o segundo confere os tipos do TypeScript. Também é possível comparar a página com o layout do Figma no navegador.
+
+## Observação sobre a lista de produtos
+Os produtos são buscados do JSON disponibilizado no teste:
+
+`https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json`
+
+O servidor desse arquivo bloqueia requisições diretas do navegador (CORS). Por isso, em desenvolvimento, o `vite.config.ts` usa um proxy (`/api-econverse`) que busca o arquivo pelo servidor do Vite. Esse proxy funciona com `npm run dev`. Em um ambiente de produção, seria necessário que o servidor do JSON liberasse CORS ou que houvesse um proxy equivalente.
+
+## Estrutura do projeto
+```
+src/
+├── assets/          imagens e ícones
+├── components/
+│   ├── Header/
+│   ├── Banner/
+│   ├── Categories/
+│   ├── ProductShowcase/
+│   ├── ProductCard/
+│   ├── ProductModal/
+│   ├── Partners/
+│   ├── Brands/
+│   ├── Newsletter/
+│   └── Footer/
+├── services/        busca dos produtos (productService.ts)
+├── types/           tipos TypeScript (Product.ts)
+├── App.tsx
+├── main.tsx
+└── index.css        variáveis e estilos globais
+```
+
+Cada componente tem seu próprio arquivo `.tsx` e `.scss`.
