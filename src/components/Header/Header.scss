@@ -1,0 +1,159 @@
+$purple: #3019b2;
+$gray: #9f9f9f;
+$dark: #271c47;
+$yellow: #f7ca11;
+
+.header {
+  width: 100%;
+  background: #fff;
+
+  &__benefits {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    list-style: none;
+    padding: 8px 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: $gray;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    strong {
+      font-weight: 600;
+      color: $purple;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 40px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 139px;
+    height: 41.3px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  &__logo-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41.3px;
+    height: 41.3px;
+    border-radius: 50%;
+    background: $yellow;
+    color: #fff;
+    font-size: 22px;
+  }
+
+  &__logo-text {
+    margin-left: 1px;
+    color: $dark;
+    font-size: 22px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 630px;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 10px;
+    background: #f6f5f2;
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: $dark;
+
+      &::placeholder {
+        color: $gray;
+      }
+    }
+
+    button {
+      display: flex;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    button {
+      display: flex;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__menu {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px 12px;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      list-style: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: $gray;
+      text-decoration: none;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__menu-highlight {
+    color: $purple !important;
+    font-weight: 600 !important;
+  }
+}
